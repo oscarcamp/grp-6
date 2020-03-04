@@ -1,10 +1,13 @@
 import React from 'react'
 import { db } from '../modules/firebase'
+import { Link } from 'react-router-dom'
+import Question from './Question'
 
 class SingleQuiz extends React.Component {
 	state = {
 		id: '',
 		title: '',
+		questions: [],
 	}
 
 	componentDidMount() {
@@ -29,17 +32,26 @@ class SingleQuiz extends React.Component {
 	render() {
 		console.log('this.state.questions', this.state.questions)
 		
-		// const questionList = this.state.questions.map(question => {
-		// 	console.log('question', question)
-		// })
+		const questionList = this.state.questions.map(question => {
+			console.log('question', question)
+			
+			return (
+				<Question 
+					data={question}
+				/>
+			)
+		})
 		return (
 			<div className="singleTodo text-center mt-3">
-			<h1>{this.state.title}</h1>
-
-				{/* <h2>{this.state.title}</h2>
-				<p>{this.state.description}</p>
-				{this.state.completed ? <p>This todo is done</p> : <p>This todo is undone</p>}
-				<Link to="/" className="btn btn-primary mt-3">Back to list</Link> */}
+				<h1>{this.state.title}</h1>
+				<div className="question">
+					<form>
+						{questionList}
+					</form>
+					<button>Sumbit</button>
+				</div>
+				
+				<Link to="/" className="btn btn-primary mt-3">Back to list</Link>
 			</div>
 		)
 	}
