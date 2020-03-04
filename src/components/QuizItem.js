@@ -1,11 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Quiz = (props) => {
 	const { id, title } = props.quiz;
-	console.log('props.quiz', props.quiz)
 	return (
 		<li>
+		<Link
+			to={ '/quiz/' + id }>
 			{title}
+		</Link>
 		</li>
 	)
 }

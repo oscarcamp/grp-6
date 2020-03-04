@@ -1,6 +1,6 @@
 import React from 'react'
 import { db } from '../modules/firebase'
-import Quiz from './Quiz'
+import QuizItem from './QuizItem'
 
 class QuizList extends React.Component {
 
@@ -17,25 +17,23 @@ class QuizList extends React.Component {
 			const quizzes = []
 
 			querySnapshot.forEach(doc => {
-				console.log(doc.data().questions)
+				console.log(doc.data())
 				quizzes.push({
 					id: doc.id,
-					title: doc.data().questions.title,
+					title: doc.data().title,
 				})
 			})
 
 			this.setState({
 				quizzes: quizzes,
 			})
-
-			console.log(quizzes)
 		});
 
 	}
 	render() {
 		const quiz = this.state.quizzes.map(quiz => {
 			return (
-				<Quiz
+				<QuizItem
 					quiz={quiz}
 					key={quiz.id}
 				/>
