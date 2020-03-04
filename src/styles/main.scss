@@ -1,0 +1,49 @@
+$body-bg:  #212f3d ;
+$body-color: #fff;
+
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  h1{
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 3em;
+  }
+  //Quiz part
+  .quizitem, a{
+    font-size: x-large;
+    color: white;
+  }
+
+    //Question part
+
+  .question{
+      margin-top: 2.5rem;
+      font-size: 1.2em;
+  }
+
+  .answer{
+      margin-top: 0.5rem;
+      margin-left: 1rem;
+  }
+  .answer-radio{
+      margin-right: 0.2rem;
+  }
+  .question-btn{
+    display: flex;
+	justify-content: space-between;
+  }
+  
