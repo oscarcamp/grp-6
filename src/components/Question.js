@@ -1,23 +1,26 @@
 import React from 'react'
+import Answer from './Answer'
 
 const Question = (props) => {
 	console.log('props.data', props.data)
 
+	// id for group radio buttons
 	const id = props.data.id
 
+	// loop through array of answers to render
 	const answer = props.data.answers.map((answer) => {
-		console.log('props.id', props.id)
 		return (
-			<li id="answer">
-				<label className="answer" htmlFor={answer} key={Math.random() * 10}>{answer}</label>
-				<input type="radio" name={id} className="answer-radio ml-2" value={answer}/>
-			</li>
+			<Answer 
+				answer={answer}
+				id={id}
+			/>
 		)
 	})
 	return (
 		<div>
 			<h2 className="question">{props.data.question}</h2>
 			<ul className="d-flex justify-content-around">
+				{/* render answers */}
 				{answer}
 			</ul>
 		</div>

@@ -18,9 +18,10 @@ class SingleQuiz extends React.Component {
 	}
 
 	getQuizList = () => {
-		console.log()
+		// get quizzes from firebase
 		db.collection("quizzes").doc(this.props.match.params.id).get()
 		.then((response) => {
+			// update state
 			this.setState({
 				id: response.id,
 				title: response.data().title,
