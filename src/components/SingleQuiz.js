@@ -38,6 +38,7 @@ class SingleQuiz extends React.Component {
 			return (
 				<Question 
 					data={question}
+					key={Math.random() * 10}
 				/>
 			)
 		})
