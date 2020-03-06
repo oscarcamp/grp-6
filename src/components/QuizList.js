@@ -45,10 +45,11 @@ class QuizList extends React.Component {
 			<div className="quizzes">
 				<div className="container">
 
+					<h1 className="quiz-h1">Choose a quiz you want to play:</h1>
 					<ul className="quiz-list">
 						{quiz}
 					</ul>
-					<Link to="/" className="btn btn-danger mt-3">Home</Link>
+					<Link to="/" className="btn btn-info mt-3"> <span role="img" aria-label="A back arrow">🔙</span> Home</Link>
 				</div>
 			</div>
 		)

@@ -2,6 +2,38 @@ $body-bg:  #212f3d ;
 $body-color: #fff;
 
 @import "~bootstrap/scss/bootstrap";
+@mixin transition($transition){
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin textShadow($text-shadow) {
+  -webkit-text-shadow: $text-shadow;
+  -moz-text-shadow: $text-shadow;
+  -ms-text-shadow: $text-shadow;
+  -o-text-shadow: $text-shadow;
+  text-shadow: $text-shadow;
+}
+
+@mixin boxShadow($box-shadow) {
+  -webkit-box-shadow: $box-shadow;
+  -moz-box-shadow: $box-shadow;
+  -ms-box-shadow: $box-shadow;
+  -o-box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
+}
+
+@mixin NoUserSelect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
 
 body {
     margin: 0;
@@ -22,11 +54,28 @@ body {
       margin-top: 1rem;
       font-size: 3em;
   }
+  
   //Homep part
-  .container-home{
-  display: flex;
-	justify-content: space-between;
+  .home-h2{
+    text-align: center;
+    font-size: 1em;
   }
+
+  .home-text{
+  position: absolute;
+  top: 20%;
+  left:50%;
+  transform:  translateX(-50%);
+  }
+
+  .home-btn{
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform:  translateX(-50%);
+  }
+  
   //Create part
   .btn-home{
   display: flex;
@@ -34,27 +83,51 @@ body {
   }
 
   //Quiz part
+  .quiz-h1{
+    font-size: 2.5em;
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+  }
+
   .quizitem, a{
     font-size: x-large;
     color: white;
   }
+  li:hover, .quiza:hover{
+    @include transition(.30s ease-in-out);
+    @include textShadow(0 0 50px transparent);
+    color:  #ffc107  ;
+    overflow:visible;
+    text-decoration: none;
+    &:hover {
+      @include textShadow(0 0 1px   #2196f3  
+      );
+    }
+  }
+  
 
   //Question part
 
   .question{
       margin-top: 2.5rem;
       font-size: 1.2em;
+      margin-bottom: 1rem;
   }
 
-  .answer{
-      margin-top: 0.5rem;
-      margin-left: 1rem;
+  .radio{
+    display: flex;
+    justify-content: flex-start;
   }
-  .answer-radio{
-      margin-right: 0.5rem;
+
+  .radio{
+   margin-top: 2rem;
+   margin-left: 3rem;
+  }
+  .answerradio{
+      margin-right: 1rem;
   }
   .question-btn{
+    margin-top: 8vh;
     display: flex;
 	justify-content: space-between;
   }
-  

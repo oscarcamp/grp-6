@@ -5,8 +5,8 @@ const Question = (props) => {
 
 	const answer = props.data.answers.map((answer) => {
 		return (
-			<label className="answer" htmlFor={answer}>
-				<input className="answer-radio" type="radio" name="answer" value={answer}/>
+			<label className="radio" htmlFor={answer}>
+				<input className="answerradio" type="radio" name="answer" value={answer}/>
 				{answer}
 			</label>
 		)

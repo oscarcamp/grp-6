@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom'
         render(){
             return(           
             <div>
-            <h1>Skapa din Quiz</h1>
+            <h1>Create your own Quiz:</h1>
             
             <form>
             <div className="form-group">
@@ -73,8 +73,8 @@ import { Link } from 'react-router-dom'
                     </div>
                 </div>
                 <div className="btn-home">
-                <Link to="/" className="btn btn-danger mt-3">Home</Link>
-                <button type="submit" className="btn btn-primary mt-3">Submit</button>
+                <Link to="/" className="btn btn-info mt-3"> <span role="img" aria-label="A back arrow">🔙</span> Home</Link>
+                <button type="submit" className="btn btn-primary mt-3">Create <span role="img" aria-label="Tools">🛠</span></button>
                 </div>
             </div>    
 

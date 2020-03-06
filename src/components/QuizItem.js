@@ -6,6 +6,7 @@ const Quiz = (props) => {
 	return (
 		<li className="quizitem">
 		<Link
+			className="quiza"
 			to={ '/quiz/' + id }>
 			{title}
 		</Link>

@@ -43,7 +43,7 @@ class SingleQuiz extends React.Component {
 			)
 		})
 		return (
-			<div className="singleTodo text-center mt-3">
+			<div className=" text-center mt-3">
 				<h1>{this.state.title}</h1>
 				<div className="question">
 					<form>
@@ -52,8 +52,8 @@ class SingleQuiz extends React.Component {
 					
 				</div>
 					<div className="question-btn">
-					<Link to="/QuizList" className="btn btn-success mt-3">Back to list</Link>
-					<button className="btn btn-primary mt-3">Sumbit</button>
+					<Link to="/QuizList" className="btn btn-warning mt-3"> <span role="img" aria-label="A back arrow">🔙</span> Back to list</Link>
+					<button className="btn btn-primary mt-3">Confirm <span role="img" aria-label="A celebrations emoji">🥳</span> </button>
 				</div>
 			</div>
 		)
