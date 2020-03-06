@@ -10,7 +10,8 @@ class SingleQuiz extends React.Component {
 		questions: [],
 		answers: [],
 		correctAnswer: [],
-		selectedAnswer: ''
+		selectedAnswer: '',
+		quizSubmitted: false,
 	}
 
 	componentDidMount() {
@@ -36,6 +37,9 @@ class SingleQuiz extends React.Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault()
+		this.setState({
+			quizSubmitted: true,
+		})
 		
 	}
 
@@ -67,9 +71,7 @@ class SingleQuiz extends React.Component {
 			],
 			correctAnswer: correctAnswerArr,
 		}))
-
-		console.log('this.state.answers', this.state.answers)
-		console.log('this.state.correctAnswer', this.state.correctAnswer)
+		
 	}
 
 	render() {
@@ -95,12 +97,15 @@ class SingleQuiz extends React.Component {
 						{questionList}
 						<div className="question-btn">
 							<Link to="/" className="btn btn-success mt-3">Back to list</Link>
-							<button className="btn btn-primary mt-3">Sumbit</button>
+							<button className="btn btn-primary mt-3">Submit</button>
 						</div>
 					</form>
-					<div className="score">
-						<h2>{this.state.answers.length} / {this.state.correctAnswer.length}</h2>
-					</div>
+					{this.state.quizSubmitted ? (
+						<div className="score">
+							<h2>{this.state.answers.length} / {this.state.correctAnswer.length}</h2>
+						</div>
+					) : ''}
+					
 				</div>
 				
 			</div>

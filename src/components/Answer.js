@@ -12,7 +12,6 @@ const Answer = props => {
 				className="answer-radio ml-2" 
 				value={props.answer} 
 				onChange={props.change}
-				checked={props.checked}
 				/>
 		</li>
 	)
