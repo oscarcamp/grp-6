@@ -7,11 +7,12 @@ class SingleQuiz extends React.Component {
 	state = {
 		id: '',
 		title: '',
+		points: null,
 		questions: [],
 		answers: [],
 		correctAnswer: [],
-		selectedAnswer: '',
 		quizSubmitted: false,
+		value: '',
 	}
 
 	componentDidMount() {
@@ -37,6 +38,7 @@ class SingleQuiz extends React.Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault()
+		
 		this.setState({
 			quizSubmitted: true,
 		})
@@ -44,15 +46,14 @@ class SingleQuiz extends React.Component {
 	}
 
 	handleChange = e => {
-		this.setState({
-			correctAnswer: []
-		})
+		console.log('this.state', this.state)
 		// get an array of correct answers
 		const correctAnswerArr = this.state.questions.map(question => {
 			return question.correctAnswer
 		})
 
 		// get an array of correct guessed answers
+		
 		let guessedAnswer = ''
 		if (!correctAnswerArr.includes(e.target.value)) {
 			return
@@ -70,6 +71,7 @@ class SingleQuiz extends React.Component {
 				guessedAnswer,
 			],
 			correctAnswer: correctAnswerArr,
+			value: guessedAnswer
 		}))
 		
 	}
@@ -78,13 +80,13 @@ class SingleQuiz extends React.Component {
 		console.log('this.state.questions', this.state.questions)
 		
 		// loop through questions array to render each question
-		const questionList = this.state.questions.map(question => {
+		const questionList = this.state.questions.map((question, i) => {
 			console.log('question', question)
 			return (
 				<Question 
 					data={question}
 					singleQuizData={this.state}
-					key={Math.random() * 10}
+					key={i}
 					onChange={this.handleChange}
 				/>
 			)

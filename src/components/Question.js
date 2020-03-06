@@ -10,16 +10,20 @@ const Question = (props) => {
 	//
 	const singleQuizData = props.singleQuizData
 
+	const value = props.singleQuizData.value
+
 	// save onChange props to send to Answer
 	const change = props.onChange
 	console.log('props.handlechange', props.onChange)
 	// loop through array of answers to render
-	const answer = props.data.answers.map((answer) => {
+	const answer = props.data.answers.map((answer, i) => {
 		return (
 			<Answer 
+				value={value}
 				singleData={singleQuizData}
 				answer={answer}
 				id={id}
+				key={i}
 				change={change}
 			/>
 		)
