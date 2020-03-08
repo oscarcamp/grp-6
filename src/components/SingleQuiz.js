@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { db } from '../modules/firebase'
 import { Link } from 'react-router-dom'
@@ -12,6 +11,7 @@ class SingleQuiz extends React.Component {
 		questions: [],
 		answers: [],
 		correctAnswer: [],
+		totalScore: null,
 		quizSubmitted: false,
 		value: '',
 	}
@@ -39,23 +39,47 @@ class SingleQuiz extends React.Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault()
-		
+		// get an array of points
+		const pointsArr = this.state.questions.map(question => question.points)
+
+		// get total points
+		const countScore = (points) => {
+			return pointsArr.reduce((sum, points) => sum + points, 0)
+		}
+
+		let totalScore = countScore(pointsArr)
+
+		const correctAnswer = this.state.questions.map(question => question.correctAnswer)
+		let answersArr = this.state.answers
+
+		// compare two arrays
+		/*
+		let matchingValue = (answers, correctAnswer) => {
+		return correctAnswer.filter(b => answers.some(a=> new RegExp(b,'i').test(a)))
+		}
+
+		console.log('matchingValue', matchingValue(answersArr,correctAnswer))
+		*/
 		this.setState({
+			totalScore: totalScore,
 			quizSubmitted: true,
 		})
+
+		console.log('answers inside submit', this.state.answers)
 		
 	}
 
-	handleChange = e => {
-		console.log('this.state', this.state)
+	handleChange = (e) => {
+		console.log('this.state.questions', this.state.questions)
+
 		// get an array of correct answers
-		const correctAnswerArr = this.state.questions.map(question => {
+		const correctAnswerArr = this.state.questions.map((question, i) => {
 			return question.correctAnswer
 		})
 
-		// get an array of correct guessed answers
-		
-		let guessedAnswer = ''
+		// get the correct guessed answer
+		let guessedAnswer
+
 		if (!correctAnswerArr.includes(e.target.value)) {
 			return
 		} else if (this.state.answers.includes(e.target.value)) {
@@ -72,17 +96,18 @@ class SingleQuiz extends React.Component {
 				guessedAnswer,
 			],
 			correctAnswer: correctAnswerArr,
+			// points: this.state.points + points,
 			value: guessedAnswer
 		}))
+		console.log('answers', this.state.answers)
+
+		console.log('this.state.answers', this.state.answers)
 		
 	}
 
 	render() {
-		console.log('this.state.questions', this.state.questions)
-		
 		// loop through questions array to render each question
 		const questionList = this.state.questions.map((question, i) => {
-			console.log('question', question)
 			return (
 				<Question 
 					data={question}
@@ -105,7 +130,7 @@ class SingleQuiz extends React.Component {
 					</form>
 					{this.state.quizSubmitted ? (
 						<div className="score">
-							<h2>{this.state.answers.length} / {this.state.correctAnswer.length}</h2>
+							<h2>{this.state.answers.length} / {this.state.totalScore}</h2>
 						</div>
 					) : ''}
 					

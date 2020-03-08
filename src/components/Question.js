@@ -2,24 +2,26 @@ import React from 'react'
 import Answer from './Answer'
 
 const Question = (props) => {
-	console.log('props', props)
-
-	// id for group radio buttons
+	// id for group radio buttons to send to Answer
 	const id = props.data.id
+	// get points to send to answer
+	const points = props.data.points
 
-	//
+	// get singleQuizData to send to Answer
 	const singleQuizData = props.singleQuizData
 
+	// get singleQuizDataValue to send to Answer
 	const value = props.singleQuizData.value
 
 	// save onChange props to send to Answer
 	const change = props.onChange
-	console.log('props.handlechange', props.onChange)
+
 	// loop through array of answers to render
 	const answer = props.data.answers.map((answer, i) => {
 		return (
 			<Answer 
 				value={value}
+				points={points}
 				singleData={singleQuizData}
 				answer={answer}
 				id={id}
