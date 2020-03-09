@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { db } from '../modules/firebase'
 import QuizItem from './QuizItem'
 
@@ -42,12 +43,12 @@ class QuizList extends React.Component {
 
 		return (
 			<div className="quizzes">
-				<h1>Quizzes</h1>
 				<div className="container">
 
 					<ul className="quiz-list">
 						{quiz}
 					</ul>
+					<Link to="/" className="btn btn-danger mt-3">Home</Link>
 				</div>
 			</div>
 		)
