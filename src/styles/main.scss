@@ -22,13 +22,24 @@ body {
       margin-top: 1rem;
       font-size: 3em;
   }
+  //Homep part
+  .container-home{
+  display: flex;
+	justify-content: space-between;
+  }
+  //Create part
+  .btn-home{
+  display: flex;
+	justify-content: space-between;
+  }
+
   //Quiz part
   .quizitem, a{
     font-size: x-large;
     color: white;
   }
 
-    //Question part
+  //Question part
 
   .question{
       margin-top: 2.5rem;
