@@ -1,0 +1,55 @@
+@mixin transition($transition){
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+  }
+  
+  @mixin textShadow($text-shadow) {
+    -webkit-text-shadow: $text-shadow;
+    -moz-text-shadow: $text-shadow;
+    -ms-text-shadow: $text-shadow;
+    -o-text-shadow: $text-shadow;
+    text-shadow: $text-shadow;
+  }
+  
+  @mixin boxShadow($box-shadow) {
+    -webkit-box-shadow: $box-shadow;
+    -moz-box-shadow: $box-shadow;
+    -ms-box-shadow: $box-shadow;
+    -o-box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
+  }
+  
+  @mixin NoUserSelect {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+
+  //Quiz part
+  .quiz-h1{
+    font-size: 2.5em;
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+  }
+
+  .quizitem, a{
+    font-size: x-large;
+    color: white;
+  }
+  li:hover, .quiza:hover{
+    @include transition(.30s ease-in-out);
+    @include textShadow(0 0 50px transparent);
+    color:  #ffc107  ;
+    overflow:visible;
+    text-decoration: none;
+    &:hover {
+      @include textShadow(0 0 1px   #2196f3  
+      );
+    }
+  }
+  
