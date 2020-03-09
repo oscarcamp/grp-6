@@ -53,19 +53,21 @@ class SingleQuiz extends React.Component {
 		let answersArr = this.state.answers
 
 		// compare two arrays
-		/*
+
 		let matchingValue = (answers, correctAnswer) => {
 		return correctAnswer.filter(b => answers.some(a=> new RegExp(b,'i').test(a)))
 		}
 
 		console.log('matchingValue', matchingValue(answersArr,correctAnswer))
-		*/
+	
 		this.setState({
 			totalScore: totalScore,
 			quizSubmitted: true,
 		})
 
+
 		console.log('answers inside submit', this.state.answers)
+		
 		
 	}
 
@@ -102,6 +104,9 @@ class SingleQuiz extends React.Component {
 		console.log('answers', this.state.answers)
 
 		console.log('this.state.answers', this.state.answers)
+
+
+		console.log('state in change', this.state)
 		
 	}
 

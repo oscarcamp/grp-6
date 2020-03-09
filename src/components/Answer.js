@@ -7,7 +7,7 @@ const Answer = props => {
 			<input 
 				type="radio" 
 				name={props.id} 
-				id='answers' 
+				id={props.id} 
 				className="answer-radio ml-2" 
 				value={props.answer}
 				onChange={props.change}
