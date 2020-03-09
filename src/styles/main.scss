@@ -3,6 +3,8 @@ $body-color: #fff;
 
 @import "~bootstrap/scss/bootstrap";
 
+
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -22,43 +24,34 @@ body {
       margin-top: 1rem;
       font-size: 3em;
   }
+  
   //Homep part
-  .container-home{
-  display: flex;
-	justify-content: space-between;
+  .home-h2{
+    text-align: center;
+    font-size: 1em;
   }
+
+  .home-text{
+  position: absolute;
+  top: 20%;
+  left:50%;
+  transform:  translateX(-50%);
+  }
+
+  .home-btn{
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform:  translateX(-50%);
+  }
+  
   //Create part
   .btn-home{
   display: flex;
 	justify-content: space-between;
   }
 
-  //Quiz part
-  .quizitem, a{
-    font-size: x-large;
-    color: white;
-  }
+  
 
-  //Question part
-
-  .question{
-      margin-top: 2.5rem;
-      font-size: 1.2em;
-  }
-
-  .answer{
-      margin-top: 0.5rem;
-      margin-left: 1rem;
-  }
-  .answer-radio{
-      margin-right: 0.5rem;
-  }
-  .question-btn{
-    display: flex;
-	justify-content: space-between;
-  }
-
-  .answer {
-    list-style-type: none;
-  }
   
