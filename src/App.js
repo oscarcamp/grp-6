@@ -1,9 +1,10 @@
 import React from 'react';
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
 import Home from './components/Home';
-import CreateQuiz from './components/CreateQuiz';
+import AddQuiz from './components/AddQuiz';
 import QuizList from './components/QuizList';
 import SingleQuiz from './components/SingleQuiz';
+import AddQuizQuestion from './components/AddQuizQuestion';
 
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
 			<div id="App" className="container">
 				<Switch> 
 					<Route exact path='/' component={Home} />
-					<Route exact path='/CreateQuiz' component={CreateQuiz} />
-					<Route exact path='/QuizList' component={QuizList} />
+					<Route path='/AddQuiz' component={AddQuiz} />
+					<Route path='/AddQuizQuestion' component={AddQuizQuestion} />
+					<Route path='/QuizList' component={QuizList} />
 					<Route path='/quiz/:id' component={SingleQuiz} />
 				</Switch>
 			</div>

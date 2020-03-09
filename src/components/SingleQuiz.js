@@ -140,7 +140,10 @@ class SingleQuiz extends React.Component {
 					) : ''}
 					
 				</div>
-				
+					<div className="question-btn">
+					<Link to="/QuizList" className="btn btn-success mt-3">Back to list</Link>
+					<button className="btn btn-primary mt-3">Sumbit</button>
+				</div>
 			</div>
 		)
 	}

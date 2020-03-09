@@ -9,9 +9,10 @@ class QuizList extends React.Component {
 		quizzes: [],
 	}
 
-	componentDidMount = () => {
-		this.getQuizList()
+	componentDidMount() {
+		this.getQuizList();
 	}
+
 	getQuizList = () => {
 		db.collection("quizzes").get().then((querySnapshot) => {
 			
@@ -31,12 +32,22 @@ class QuizList extends React.Component {
 		});
 
 	}
+
+	handleQuizToggle = (quiz) => {
+		console.log('Want to toggle quiz with id ' + quiz.id);
+
+		this.props.history.push('/AddQuizQuestion');
+
+
+	}
+
 	render() {
 		const quiz = this.state.quizzes.map(quiz => {
 			return (
 				<QuizItem
 					quiz={quiz}
 					key={quiz.id}
+					onToggle={this.handleQuizToggle}
 				/>
 			)
 		})
