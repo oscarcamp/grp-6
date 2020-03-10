@@ -25,8 +25,22 @@ class AddQuestion extends React.Component {
 				title: doc.data().title,
 			})
 		})
-
+		this.getQuizList()
 		console.log(this.state)
+	}
+
+	getQuizList = () => {
+		// get quizzes from firebase
+		db.collection("quizzes").doc(this.props.match.params.id).get()
+		.then((response) => {
+			// update state
+			this.setState({
+				id: response.id,
+				title: response.data().title,
+				...response.data(),
+			})
+			console.log('response.data()', response.data())
+		});
 	}
 
 

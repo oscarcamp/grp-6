@@ -4,10 +4,6 @@ import { Link } from 'react-router-dom'
 const Quiz = (props) => {
 	const { id, title } = props.quiz;
 
-	const handleOnToggleClick = () => {
-		props.onToggle(props.quiz)
-	}
-
 	const handleOnDeleteClick = () => {
 		props.onDelete(id)
 	}
@@ -20,8 +16,10 @@ const Quiz = (props) => {
 				{title}
 			</Link>
 			<span className="ml-2">
-			<button onClick={ handleOnToggleClick } className="btn btn-primary btn-sm"> ✎ </button>
-			<button onClick={ handleOnDeleteClick } className="btn btn-danger btn-sm"> - </button>
+			<Link to={ '/AddQuestion/' + id }>
+				<button className="btn btn-primary btn-sm m-1"> ✎ </button>
+			</Link>
+			<button onClick={ handleOnDeleteClick } className="btn btn-danger btn-sm m-1"> - </button>
 
 			</span>
 		</li>

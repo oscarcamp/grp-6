@@ -64,11 +64,7 @@ class SingleQuiz extends React.Component {
 			totalScore: totalScore,
 			quizSubmitted: true,
 		})
-
-
 		console.log('answers inside submit', this.state.answers)
-		
-		
 	}
 
 	handleChange = (e) => {
@@ -102,10 +98,7 @@ class SingleQuiz extends React.Component {
 			value: guessedAnswer
 		}))
 		console.log('answers', this.state.answers)
-
 		console.log('this.state.answers', this.state.answers)
-
-
 		console.log('state in change', this.state)
 		
 	}
