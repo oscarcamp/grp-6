@@ -9,9 +9,9 @@ const Quiz = (props) => {
 	}
 
 	return (
-		<li className="quizitem d-flex justify-content-between">
+		<li className="quiz d-flex justify-content-between">
 			<Link
-				className="quiz"
+				className="quizitem"
 				to={ '/quiz/' + id }>
 				{title}
 			</Link>

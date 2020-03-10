@@ -37,11 +37,11 @@
     margin-bottom: 4vh;
   }
 
-  .quizitem, a{
+  .quizitem{
     font-size: x-large;
     color: white;
   }
-  a:hover, .quizitem:hover{
+   .quizitem:hover{
     @include transition(.30s ease-in-out);
     @include textShadow(0 0 50px transparent);
     color:  #ffc107  ;
