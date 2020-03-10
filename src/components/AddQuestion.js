@@ -185,7 +185,12 @@ class AddQuestion extends React.Component {
 						</button>
 					</form>
 				</div>
-
+				<div className="btn-home">
+					<Link to="/QuizList" className="btn btn-warning mt-3"> 
+						<span role="img" aria-label="A back arrow">🔙</span> 
+						Back to list
+					</Link>
+				</div> 
 				
 				
 
