@@ -23,7 +23,7 @@ const Question = (props) => {
 	return (
 		<div>
 			<h2 className="question">{props.data.question}</h2>
-			<ul className="d-flex justify-content-around">
+			<ul>
 				{/* render answers */}
 				{answer}
 			</ul>
