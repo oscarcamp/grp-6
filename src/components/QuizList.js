@@ -33,6 +33,18 @@ class QuizList extends React.Component {
 
 	}
 
+	handleDeleteQuiz = (id) => {
+		console.log('Want to delete todo with id ' + id);
+
+		db.collection('quizzes').doc(id).delete()
+		.then(() => {
+			// firestore has successfully deleted the quiz
+			this.getQuizList()
+		}).catch(err => {
+			console.error(err);
+		});
+	}
+
 	handleQuizToggle = (quiz) => {
 		console.log('Want to toggle quiz with id ' + quiz.id);
 
@@ -48,6 +60,7 @@ class QuizList extends React.Component {
 					quiz={quiz}
 					key={quiz.id}
 					onToggle={this.handleQuizToggle}
+					onDelete={this.handleDeleteQuiz}
 				/>
 			)
 		})

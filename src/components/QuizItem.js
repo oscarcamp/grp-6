@@ -8,17 +8,22 @@ const Quiz = (props) => {
 		props.onToggle(props.quiz)
 	}
 
-	return (
-		<li className="quizitem">
-		<Link
-			className="quiza"
-			to={ '/quiz/' + id }>
-			{title}
-		</Link>
-		<span className="ml-2">
-		<button onClick={ handleOnToggleClick } className="btn btn-primary btn-sm"> + </button>
+	const handleOnDeleteClick = () => {
+		props.onDelete(id)
+	}
 
-		</span>
+	return (
+		<li className="quizitem d-flex justify-content-between">
+			<Link
+				className="quiz"
+				to={ '/quiz/' + id }>
+				{title}
+			</Link>
+			<span className="ml-2">
+			<button onClick={ handleOnToggleClick } className="btn btn-primary btn-sm"> ✎ </button>
+			<button onClick={ handleOnDeleteClick } className="btn btn-danger btn-sm"> - </button>
+
+			</span>
 		</li>
 
 	)
