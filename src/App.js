@@ -4,7 +4,7 @@ import Home from './components/Home';
 import AddQuiz from './components/AddQuiz';
 import QuizList from './components/QuizList';
 import SingleQuiz from './components/SingleQuiz';
-import AddQuizQuestion from './components/AddQuizQuestion';
+import AddQuestion from './components/AddQuestion'
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
 				<Switch> 
 					<Route exact path='/' component={Home} />
 					<Route path='/AddQuiz' component={AddQuiz} />
-					<Route path='/AddQuizQuestion' component={AddQuizQuestion} />
+					<Route path='/AddQuestion/:id' component={AddQuestion} />
 					<Route path='/QuizList' component={QuizList} />
 					<Route path='/quiz/:id' component={SingleQuiz} />
 				</Switch>
