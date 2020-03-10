@@ -12,14 +12,17 @@
 }
 
 .radio{
- margin-top: 2rem;
- margin-left: 3rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
-.answerradio{
+.answer-radio{
     margin-right: 1rem;
 }
 .question-btn{
   margin-top: 8vh;
   display: flex;
   justify-content: space-between;
+}
+.asw-li{
+  list-style-type: none;
 }

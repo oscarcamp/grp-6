@@ -3,8 +3,8 @@ import React from 'react'
 const Answer = props => {
 	console.log('props.question', props.question)
 	return (
-		<li className="answer">
-			<label className="answer" htmlFor={props.answer}>{props.answer}</label>
+		<li className="asw-li">
+			<label className="radio" htmlFor={props.answer}>
 			<input 
 				type="radio" 
 				name={props.question.question} 
@@ -14,6 +14,7 @@ const Answer = props => {
 				onChange={props.change}
 				// checked={props.value === props.answer}
 				/>
+				{props.answer} </label>
 		</li>
 	)
 }

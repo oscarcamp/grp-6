@@ -41,14 +41,14 @@
     font-size: x-large;
     color: white;
   }
-  li:hover, .quiza:hover{
+  a:hover, .quizitem:hover{
     @include transition(.30s ease-in-out);
     @include textShadow(0 0 50px transparent);
     color:  #ffc107  ;
     overflow:visible;
     text-decoration: none;
     &:hover {
-      @include textShadow(0 0 1px   #2196f3  
+      @include textShadow(0 0 4px   #b38600  
       );
     }
   }
