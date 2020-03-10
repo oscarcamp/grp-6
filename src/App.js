@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
 import Home from './components/Home';
-import AddQuiz from './components/AddQuiz';
+import AddQuiz from './components/create-quiz/AddQuiz';
 import QuizList from './components/QuizList';
-import SingleQuiz from './components/SingleQuiz';
-import AddQuestion from './components/AddQuestion'
+import SingleQuiz from './components/play-quiz/SingleQuiz';
+import AddQuestion from './components/create-quiz/AddQuestion'
 
 
 function App() {

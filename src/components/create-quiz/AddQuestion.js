@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { db } from '../modules/firebase'
+import { db } from '../../modules/firebase'
 import AddAnswer from './AddAnswer'
 
 class AddQuestion extends React.Component {
@@ -126,7 +126,6 @@ class AddQuestion extends React.Component {
 				</div>
 			)	
 		})
-
 
 		return (
 			<div className="create-quiz">

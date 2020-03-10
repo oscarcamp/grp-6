@@ -1,5 +1,5 @@
 import React from 'react'
-import { db } from '../modules/firebase'
+import { db } from '../../modules/firebase'
 import { Link } from 'react-router-dom'
 import Question from './Question'
 
@@ -10,10 +10,10 @@ class SingleQuiz extends React.Component {
 		points: null,
 		questions: [],
 		answers: [],
-		correctAnswer: [],
 		totalScore: null,
 		quizSubmitted: false,
 		value: '',
+		
 	}
 
 	componentDidMount() {
@@ -42,65 +42,39 @@ class SingleQuiz extends React.Component {
 		// get an array of points
 		const pointsArr = this.state.questions.map(question => question.points)
 
-		// get total points
+		// get total score
 		const countScore = (points) => {
 			return pointsArr.reduce((sum, points) => sum + points, 0)
 		}
 
 		let totalScore = countScore(pointsArr)
 
-		const correctAnswer = this.state.questions.map(question => question.correctAnswer)
-		let answersArr = this.state.answers
-
-		// compare two arrays
-
-		let matchingValue = (answers, correctAnswer) => {
-		return correctAnswer.filter(b => answers.some(a=> new RegExp(b,'i').test(a)))
-		}
-
-		console.log('matchingValue', matchingValue(answersArr,correctAnswer))
-	
-		this.setState({
-			totalScore: totalScore,
-			quizSubmitted: true,
-		})
-		console.log('answers inside submit', this.state.answers)
-	}
-
-	handleChange = (e) => {
-		console.log('this.state.questions', this.state.questions)
-
 		// get an array of correct answers
 		const correctAnswerArr = this.state.questions.map((question, i) => {
 			return question.correctAnswer
 		})
 
-		// get the correct guessed answer
-		let guessedAnswer
-
-		if (!correctAnswerArr.includes(e.target.value)) {
-			return
-		} else if (this.state.answers.includes(e.target.value)) {
-			return
-		} else {
-			guessedAnswer = e.target.value
-		}
-
-		this.setState(prevState => ({
-			// copy over any other values from state
-			...prevState,
-			answers: [
-				...prevState.answers,
-				guessedAnswer,
-			],
-			correctAnswer: correctAnswerArr,
-			// points: this.state.points + points,
-			value: guessedAnswer
-		}))
-		console.log('answers', this.state.answers)
-		console.log('this.state.answers', this.state.answers)
-		console.log('state in change', this.state)
+		// get an array of all the object values in state
+		const stateValueArr = Object.values(this.state)
 		
+		// filter stateValueArr to get all the correct guessed answers
+		const correctGuessedAnswers = stateValueArr.filter(answer => {
+			if (correctAnswerArr.includes(answer)) {
+				return [answer]
+			}
+		})
+
+		this.setState({
+			correctGuessedAnswers: correctGuessedAnswers,
+			totalScore: totalScore,
+			quizSubmitted: true,
+		})
+	}
+
+	handleChange = (e) => {
+		this.setState({
+			[e.target.name]: e.target.value,
+		});
 	}
 
 	render() {
@@ -112,6 +86,8 @@ class SingleQuiz extends React.Component {
 					singleQuizData={this.state}
 					key={i}
 					onChange={this.handleChange}
+					handleOnClick={this.handleOnClick}
+					
 				/>
 			)
 		})
@@ -128,7 +104,7 @@ class SingleQuiz extends React.Component {
 					</form>
 					{this.state.quizSubmitted ? (
 						<div className="score">
-							<h2>{this.state.answers.length} / {this.state.totalScore}</h2>
+							<h2>{this.state.correctGuessedAnswers.length} / {this.state.totalScore}</h2>
 						</div>
 					) : ''}
 					
