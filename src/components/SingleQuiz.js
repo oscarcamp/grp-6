@@ -129,8 +129,8 @@ class SingleQuiz extends React.Component {
 					<form onSubmit={this.handleSubmit}>
 						{questionList}
 						<div className="question-btn">
-							<Link to="/" className="btn btn-success mt-3">Back to list</Link>
-							<button className="btn btn-primary mt-3">Submit</button>
+						<Link to="/QuizList" className="btn btn-warning mt-3"> <span role="img" aria-label="A back arrow">🔙</span> Back to list</Link>
+						<button type="submit" className="btn btn-primary mt-3">Confirm <span role="img" aria-label="A celebrations emoji">🥳</span> </button>
 						</div>
 					</form>
 					{this.state.quizSubmitted ? (
@@ -139,10 +139,6 @@ class SingleQuiz extends React.Component {
 						</div>
 					) : ''}
 					
-				</div>
-					<div className="question-btn">
-					<Link to="/QuizList" className="btn btn-warning mt-3"> <span role="img" aria-label="A back arrow">🔙</span> Back to list</Link>
-					<button className="btn btn-primary mt-3">Confirm <span role="img" aria-label="A celebrations emoji">🥳</span> </button>
 				</div>
 			</div>
 		)

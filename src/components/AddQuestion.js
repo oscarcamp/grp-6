@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { db } from '../modules/firebase'
 import AddAnswer from './AddAnswer'
 
@@ -9,7 +10,7 @@ class AddQuestion extends React.Component {
 		correctAnswer: '',
 		question: '',
 		id: '',
-		points: 0,
+		points: Number(0),
 		title: '',
 	
 		questions: [],
@@ -37,11 +38,18 @@ class AddQuestion extends React.Component {
 	}
 
 	addQuestion = () => {
+		// empty input fields
+		this.setState({
+			question: '',
+			answers: [""],
+			correctAnswer: '',
+			points: '',
+		})
 		const question = {
 			question: this.state.question,
 			answers: this.state.answers,
 			correctAnswer: this.state.correctAnswer,
-			points: this.state.points,
+			points: Number(this.state.points),
 		}
 
 		const questions = [...this.state.questions, question]
@@ -51,13 +59,15 @@ class AddQuestion extends React.Component {
 			questions: questions,
 		})
 
-		// empty input fields
+		
+	}
+
+	deleteQuestion = (e, i) => {
+		const questions = this.state.questions;
+		questions.splice(i, 1);
 		this.setState({
-			question: '',
-			answers: [""],
-			correctAnswer: '',
-			points: '',
-		})
+			questions
+		});
 	}
 
 	handleChange = (e) => {
@@ -83,6 +93,27 @@ class AddQuestion extends React.Component {
 	
 
 	render() {
+
+		const displayQuiz = this.state.questions.map((question, i) => {
+			return (
+				<div key={i}>
+					<h2>{question.question} <span className="delete-question" onClick={(e) => {this.deleteQuestion(e, i)}}> 🗑</span></h2>
+					<ul>
+						{	
+							question.answers.map((answer, i) => {
+								return (
+									<li key={i}>
+										{ answer }
+									</li>
+								)
+							})
+						}
+					</ul>
+				</div>
+			)	
+		})
+
+
 		return (
 			<div className="create-quiz">
 				<h1>Create quiz</h1>
@@ -140,14 +171,26 @@ class AddQuestion extends React.Component {
 						</button>
 					</form>
 				</div>
+
+				
+				
+
 				{
 					this.state.questions.length > 0
 					?
-					<button 
-						className="btn btn-success mt-4 w-100"
-						onClick={this.handleSubmitQuiz}>
-							Submit Quiz
-					</button>
+					<div>
+						<h1>{ this.state.title }</h1>
+
+						<div className="display-quiz">
+							{ displayQuiz }
+						</div>
+
+						<button 
+							className="btn btn-success mt-4 w-100"
+							onClick={this.handleSubmitQuiz}>
+								<Link to="/">Submit Quiz</Link>
+						</button>
+					</div>
 					:
 					''
 				}

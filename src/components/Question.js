@@ -20,6 +20,7 @@ const Question = (props) => {
 	const answer = props.data.answers.map((answer, i) => {
 		return (
 			<Answer 
+				question={props.data}
 				value={value}
 				points={points}
 				singleData={singleQuizData}
