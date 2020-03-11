@@ -112,8 +112,8 @@ class AddQuestion extends React.Component {
 			return (
 				<div key={i}>
 				<div className="d-flex justify-content-between">
-					<h3>{question.question}</h3>
-					<span className="delete-question" onClick={(e) => {this.deleteQuestion(e, i)}}><button className="btn btn-danger">-</button></span>
+					<h4>{i + 1}. {question.question}</h4>
+					<span className="delete-question" onClick={(e) => {this.deleteQuestion(e, i)}}><button className="btn btn-danger">x</button></span>
 				</div>
 					<ul>
 						{	
@@ -197,7 +197,7 @@ class AddQuestion extends React.Component {
 						</div>
 
 						<button 
-							className="btn btn-success mt-4 w-100"
+							className="btn btn-success mt-4 mb-4 w-100"
 							onClick={this.handleSubmitQuiz}>
 								<Link to="/">Submit Quiz</Link>
 						</button>
