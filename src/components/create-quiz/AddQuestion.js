@@ -57,7 +57,7 @@ class AddQuestion extends React.Component {
 			question: this.state.question,
 			answers: this.state.answers,
 			correctAnswer: this.state.correctAnswer,
-			points: Number(this.state.points),
+			points: 1,
 		}
 
 		const questions = [...this.state.questions, question]
