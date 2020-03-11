@@ -56,6 +56,7 @@ class SingleQuiz extends React.Component {
 		const stateValueArr = Object.values(this.state)
 		
 		// filter stateValueArr to get all the correct guessed answers
+		// eslint-disable-next-line
 		const correctGuessedAnswers = stateValueArr.filter(answer => {
 			if (correctAnswerArr.includes(answer)) {
 				return [answer]

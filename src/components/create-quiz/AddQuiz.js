@@ -15,7 +15,6 @@ class AddQuiz extends React.Component{
 		console.log("Want to add a new title which is: " + this.state.title);
 
 		// Create a new document for our quizzes in the 'quizzes' collection
-
 		db.collection('quizzes').add(this.state)
 		.then(docRef => {
 			// redirect to quizlist

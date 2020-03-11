@@ -5,7 +5,6 @@ import AddAnswer from './AddAnswer'
 
 class AddQuestion extends React.Component {
 	state = {
-	
 		answers: [],
 		correctAnswer: '',
 		question: '',
@@ -14,7 +13,6 @@ class AddQuestion extends React.Component {
 		title: '',
 	
 		questions: [],
-		
 	}
 
 	componentDidMount = () => {
@@ -26,7 +24,6 @@ class AddQuestion extends React.Component {
 			})
 		})
 		this.getQuizList()
-		console.log(this.state)
 	}
 
 	getQuizList = () => {
@@ -39,7 +36,6 @@ class AddQuestion extends React.Component {
 				title: response.data().title,
 				...response.data(),
 			})
-			console.log('response.data()', response.data())
 		});
 	}
 
@@ -47,8 +43,6 @@ class AddQuestion extends React.Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
 		this.addQuestion()
-		console.log(this.state)
-		
 	}
 
 	addQuestion = () => {
@@ -72,8 +66,6 @@ class AddQuestion extends React.Component {
 			title: this.state.title,
 			questions: questions,
 		})
-
-		
 	}
 
 	deleteQuestion = (e, i) => {
@@ -98,7 +90,7 @@ class AddQuestion extends React.Component {
 			questions: this.state.questions,
 		})
 		.then(() => {
-			console.log('Success!')
+			console.log('Your quiz is successfully added to the list!')
 		})
 		.catch(err => {
 			console.error(err)
@@ -107,14 +99,13 @@ class AddQuestion extends React.Component {
 	
 
 	render() {
-
 		const displayQuiz = this.state.questions.map((question, i) => {
 			return (
 				<div key={i}>
-				<div className="d-flex justify-content-between">
-					<h4>{i + 1}. {question.question}</h4>
-					<span className="delete-question" onClick={(e) => {this.deleteQuestion(e, i)}}><button className="btn btn-danger">x</button></span>
-				</div>
+					<div className="d-flex justify-content-between">
+						<h4>{i + 1}. {question.question}</h4>
+						<span className="delete-question" onClick={(e) => {this.deleteQuestion(e, i)}}><button className="btn btn-danger">x</button></span>
+					</div>
 					<ul>
 						{	
 							question.answers.map((answer, i) => {
@@ -198,7 +189,7 @@ class AddQuestion extends React.Component {
 						<button 
 							className="btn back mt-4 mb-4 w-100"
 							onClick={this.handleSubmitQuiz}>
-								<Link className="submit-link" to="/">Submit Quiz</Link>
+								<Link className="submit-link" to="/QuizList">Submit Quiz</Link>
 						</button>
 					</div>
 					:

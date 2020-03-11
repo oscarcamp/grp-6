@@ -19,7 +19,6 @@ class QuizList extends React.Component {
 			const quizzes = []
 
 			querySnapshot.forEach(doc => {
-				console.log(doc.data())
 				quizzes.push({
 					id: doc.id,
 					title: doc.data().title,

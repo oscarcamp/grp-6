@@ -9,7 +9,7 @@ const Quiz = (props) => {
 	}
 
 	return (
-				<li className="quiz mb-2">
+		<li className="quiz mb-2">
 			<Link
 					className="quizitem"
 					to={ '/quiz/' + id }>
@@ -21,7 +21,7 @@ const Quiz = (props) => {
 				</Link>
 				<button onClick={ handleOnDeleteClick } className="btn btn-danger btn-sm w-100 m-1"> Delete </button>
 			</span>
-			</li>
+		</li>
 
 	)
 }

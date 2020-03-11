@@ -9,9 +9,6 @@ import AddQuestion from './components/create-quiz/AddQuestion'
 
 function App() {
 	return (
-		// <div className="App">
-		// 	<QuizList />
-		// </div>
 		<BrowserRouter>
 			<div id="App">
 				<Switch> 

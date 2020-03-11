@@ -11,7 +11,6 @@ const Answer = props => {
 				className="answer-1" 
 				value={props.answer}
 				onChange={props.change}
-				// checked={props.value === props.answer}
 				/>
 				{props.answer} </label>
 		</li>
