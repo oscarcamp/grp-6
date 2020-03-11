@@ -7,13 +7,11 @@ class SingleQuiz extends React.Component {
 	state = {
 		id: '',
 		title: '',
-		points: null,
 		questions: [],
 		answers: [],
 		totalScore: null,
 		quizSubmitted: false,
-		value: '',
-		
+		value: '',	
 	}
 
 	componentDidMount() {
@@ -63,6 +61,7 @@ class SingleQuiz extends React.Component {
 				return [answer]
 			}
 		})
+
 
 		this.setState({
 			correctGuessedAnswers: correctGuessedAnswers,

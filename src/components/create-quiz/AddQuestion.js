@@ -111,7 +111,10 @@ class AddQuestion extends React.Component {
 		const displayQuiz = this.state.questions.map((question, i) => {
 			return (
 				<div key={i}>
-					<h2>{question.question} <span className="delete-question" onClick={(e) => {this.deleteQuestion(e, i)}}> 🗑</span></h2>
+				<div className="d-flex justify-content-between">
+					<h3>{question.question}</h3>
+					<span className="delete-question" onClick={(e) => {this.deleteQuestion(e, i)}}><button className="btn btn-danger">-</button></span>
+				</div>
 					<ul>
 						{	
 							question.answers.map((answer, i) => {
@@ -166,29 +169,19 @@ class AddQuestion extends React.Component {
 							/>
 						</div>
 
-						<div className="form-group">
-							<label>Add points for the question</label>
-							<input 
-								type="number" 
-								name="points"
-								className="form-control" 
-								placeholder="Enter the correct answer" 
-								aria-label="Correct answer input"
-								value={this.state.points}
-								onChange={this.handleChange} 
-							/>
+						<div className="d-flex justify-content-between">
+							<div className="btn-home">
+								<Link to="/QuizList" className="btn btn-warning"> 
+									<span role="img" aria-label="A back arrow">🔙</span> 
+									Back to list
+								</Link>
+							</div>
+							<button type="submit" className="btn btn-primary">
+								Add question
+							</button>
+							
 						</div>
-
-						<button type="submit" className="btn btn-primary">
-							Add question
-						</button>
 					</form>
-				</div>
-				<div className="btn-home">
-					<Link to="/QuizList" className="btn btn-warning mt-3"> 
-						<span role="img" aria-label="A back arrow">🔙</span> 
-						Back to list
-					</Link>
 				</div> 
 				
 				
@@ -196,8 +189,8 @@ class AddQuestion extends React.Component {
 				{
 					this.state.questions.length > 0
 					?
-					<div>
-						<h1>{ this.state.title }</h1>
+					<div className="mt-5">
+						<h2>{ this.state.title }</h2>
 
 						<div className="display-quiz">
 							{ displayQuiz }
