@@ -58,7 +58,7 @@ class AddQuiz extends React.Component{
 
 					<div className="btn-home">
 						<Link to="/" className="btn homebtn mt-3">Home</Link>
-						<button type="submit" className="btn create-quiz mt-3">Create quiz</button>
+						<button type="submit" className="btn btn-primary create-quiz mt-3">Create quiz</button>
 					</div> 
 
 				</div>
