@@ -37,27 +37,28 @@ class AddQuiz extends React.Component{
 		return(
 		<div>
 			<form onSubmit={this.handleSubmit}> 
-				<h1>Create a Quiz</h1>
-				<div className="form-group">
-
+				<div className="form-group container">
+					<h1>Create a Quiz</h1>
 					{/* Title */}
 					<div className="input-group mt-4">
-						<label htmlFor="Title" className="mr-5">Title:</label>
-						<input
-							type="text"
-							id="title"
-							aria-label="Title of your Quiz"
-							placeholder="Type in a quiz name.."
-							className="form-control"
-							required
-							onChange={this.handleInputChange}
-							value={this.state.title}
-						/>
+						<label htmlFor="Title">Title:</label>
+						<div className="input-group">
+								<input
+									type="text"
+									id="title"
+									aria-label="Title of your Quiz"
+									placeholder="Type in a quiz name.."
+									className="form-control"
+									required
+									onChange={this.handleInputChange}
+									value={this.state.title}
+								/>
+						</div>		
 					</div>
 
 					<div className="btn-home">
-						<Link to="/" className="btn btn-danger mt-3">Home</Link>
-						<button type="submit" className="btn btn-primary mt-3">Create quiz</button>
+						<Link to="/" className="btn homebtn mt-3">Home</Link>
+						<button type="submit" className="btn create-quiz mt-3">Create quiz</button>
 					</div> 
 
 				</div>

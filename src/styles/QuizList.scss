@@ -36,20 +36,49 @@
     margin-top: 3vh;
     margin-bottom: 4vh;
   }
+  .quiz-list{
+    padding: 0;
+  }
+  .quiz{
+    max-width: 75%;
+    margin: 0 auto;
+    list-style-type: none;
+  }
 
-  .quizitem, a{
+  .quizitem{
     font-size: x-large;
     color: white;
   }
-  li:hover, .quiza:hover{
+   .quizitem:hover{
     @include transition(.30s ease-in-out);
     @include textShadow(0 0 50px transparent);
-    color:  #ffc107  ;
+    color:#fff;
     overflow:visible;
     text-decoration: none;
     &:hover {
-      @include textShadow(0 0 1px   #2196f3  
-      );
+      @include textShadow(0 0 4px #ccd1d1  );
     }
   }
+
+  .btn-danger{
+    background-color: #d67a76;
+    border-color: #d67a76;
+  }
+
+  .btn-primary{
+    background-color: #000;
+    border-color: #111;
+  }
+
+  // Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+  .quiz{
+    display: flex;
+    justify-content: space-between;
+  }
+  .quiz span {
+    display: flex;
+    justify-content: space-between;
+  }
+ }
   

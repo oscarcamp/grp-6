@@ -9,20 +9,19 @@ const Quiz = (props) => {
 	}
 
 	return (
-		<li className="quizitem mb-2">
+				<li className="quiz mb-2">
 			<Link
-				className="quiz"
-				to={ '/quiz/' + id }>
+					className="quizitem"
+					to={ '/quiz/' + id }>
 				{title}
 			</Link>
 			<span>
 				<Link className="btn btn-primary btn-sm w-100 m-1" to={ '/AddQuestion/' + id }>
-					Edit
+				Edit
 				</Link>
-
 				<button onClick={ handleOnDeleteClick } className="btn btn-danger btn-sm w-100 m-1"> Delete </button>
 			</span>
-		</li>
+			</li>
 
 	)
 }

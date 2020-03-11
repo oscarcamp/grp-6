@@ -131,7 +131,7 @@ class AddQuestion extends React.Component {
 		})
 
 		return (
-			<div className="create-quiz">
+			<div className="container create-quiz">
 				<h1>Create quiz</h1>
 				<div className="quiz-form">
 					<form onSubmit={this.handleSubmit}>
@@ -171,8 +171,7 @@ class AddQuestion extends React.Component {
 
 						<div className="d-flex justify-content-between">
 							<div className="btn-home">
-								<Link to="/QuizList" className="btn btn-warning"> 
-									<span role="img" aria-label="A back arrow">🔙</span> 
+								<Link to="/QuizList" className="btn back"> 
 									Back to list
 								</Link>
 							</div>
@@ -197,7 +196,7 @@ class AddQuestion extends React.Component {
 						</div>
 
 						<button 
-							className="btn btn-success mt-4 mb-4 w-100"
+							className="btn back mt-4 mb-4 w-100"
 							onClick={this.handleSubmitQuiz}>
 								<Link to="/">Submit Quiz</Link>
 						</button>

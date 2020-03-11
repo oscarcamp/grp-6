@@ -2,24 +2,46 @@
 
 .question{
     margin-top: 2.5rem;
-    font-size: 1.2em;
-    margin-bottom: 1rem;
+    font-size: 1em;
 }
 
 .radio{
   display: flex;
   justify-content: flex-start;
 }
-
 .radio{
- margin-top: 2rem;
- margin-left: 3rem;
+  margin-top: 1rem;
 }
-.answerradio{
-    margin-right: 1rem;
+
+.answer-1{
+  margin-right: 1rem;
 }
+.asw-ul{
+  padding: 0;
+  margin: 0;
+}
+
 .question-btn{
   margin-top: 8vh;
   display: flex;
   justify-content: space-between;
 }
+.asw-li{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/*Buttons styles*/
+.add-home{
+  color: #fff;
+  background-color: #BBCC29;
+  border-color: rgb(192, 202, 100);
+}
+
+
+@media (min-width: 768px) {
+  .content-wrapper{
+  width: 80%;
+  margin: 0 auto ;
+  }
+ }
