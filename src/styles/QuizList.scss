@@ -70,6 +70,11 @@
     border-color: #111;
   }
 
+  .btn-primary:hover {
+    background-color: #222;
+    border-color: #222;
+  }
+
   // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 
   .quiz{

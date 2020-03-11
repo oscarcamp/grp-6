@@ -131,7 +131,7 @@ class AddQuestion extends React.Component {
 		})
 
 		return (
-			<div className="container create-quiz">
+			<div className="container ">
 				<h1>Create quiz</h1>
 				<div className="quiz-form">
 					<form onSubmit={this.handleSubmit}>
@@ -198,7 +198,7 @@ class AddQuestion extends React.Component {
 						<button 
 							className="btn back mt-4 mb-4 w-100"
 							onClick={this.handleSubmitQuiz}>
-								<Link to="/">Submit Quiz</Link>
+								<Link className="submit-link" to="/">Submit Quiz</Link>
 						</button>
 					</div>
 					:

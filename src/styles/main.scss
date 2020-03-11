@@ -104,7 +104,12 @@ body {
    color: #000;
  }
 
- .back button {
+ .back:hover {
+  background-color: #dddcdc;
+  color: #000;
+}
+
+ .submit-link {
    color: black;
  }
 
