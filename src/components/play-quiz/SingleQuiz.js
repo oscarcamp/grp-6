@@ -92,18 +92,19 @@ class SingleQuiz extends React.Component {
 			)
 		})
 		return (
-			<div className=" text-center mt-3">
+			<div className="container text-left mt-3">
 				<h1>{this.state.title}</h1>
 				<div className="question">
 					<form onSubmit={this.handleSubmit}>
 						{questionList}
 						<div className="question-btn">
-						<Link to="/QuizList" className="btn btn-warning mt-3"> <span role="img" aria-label="A back arrow">🔙</span> Back to list</Link>
-						<button type="submit" className="btn btn-primary mt-3">Confirm <span role="img" aria-label="A celebrations emoji">🥳</span> </button>
+						<Link to="/QuizList" className="btn back mt-3"> Back to list</Link>
+						<button type="submit" className="btn btn-primary mt-3">Confirm </button>
 						</div>
 					</form>
 					{this.state.quizSubmitted ? (
-						<div className="score">
+						<div className="score text-center mt-3">
+							<h2>Score: </h2>
 							<h2>{this.state.correctGuessedAnswers.length} / {this.state.totalScore}</h2>
 						</div>
 					) : ''}

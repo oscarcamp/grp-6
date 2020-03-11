@@ -21,9 +21,9 @@ const Question = (props) => {
 		)
 	})
 	return (
-		<div>
+		<div className="content-wrapper">
 			<h2 className="question">{props.data.question}</h2>
-			<ul>
+			<ul className="asw-ul">
 				{/* render answers */}
 				{answer}
 			</ul>

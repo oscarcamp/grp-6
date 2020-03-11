@@ -64,7 +64,7 @@ class QuizList extends React.Component {
 					<ul className="quiz-list">
 						{quiz}
 					</ul>
-					<Link to="/" className="btn btn-info mt-3"> <span role="img" aria-label="A back arrow">🔙</span> Home</Link>
+					<Link to="/" className=" homebtn"> Home</Link>
 				</div>
 			</div>
 		)

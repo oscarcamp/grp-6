@@ -13,7 +13,7 @@ function App() {
 		// 	<QuizList />
 		// </div>
 		<BrowserRouter>
-			<div id="App" className="container">
+			<div id="App">
 				<Switch> 
 					<Route exact path='/' component={Home} />
 					<Route path='/AddQuiz' component={AddQuiz} />

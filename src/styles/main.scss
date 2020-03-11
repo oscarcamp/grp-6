@@ -1,29 +1,36 @@
-$body-bg:  #212f3d ;
+$body-bg:  #5a93c4 ;
 $body-color: #fff;
 
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
 
 
 
 body {
+  height: 80vh;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: url("../img/joanna-kosinska-mjC9apK53a8-unsplash.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+  h1, h2, h3, h4, h5, h6{
+    font-family: 'Fredoka One', cursive;
   }
 
   h1{
       text-align: center;
       margin-top: 1rem;
-      font-size: 3em;
+      font-size: 1.5em;
   }
+
+  @media (min-width: 992px) { 
+    h1{
+      font-size: 3em;}
+   }
   
   //Homep part
   .home-h2{
@@ -36,15 +43,68 @@ body {
   top: 20%;
   left:50%;
   transform:  translateX(-50%);
+  color: #737373; 
+  font-size: 2em;
   }
 
-  .home-btn{
+  .start-btn{
   margin: auto;
   position: absolute;
   top: 50%;
   left:50%;
   transform:  translateX(-50%);
   }
+
+  .homebtn {
+    background-color:#4f4e4f;
+    border-radius:31px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Georgia;
+    font-size:13px;
+    font-weight:bold;
+    padding:14px 13px;
+    text-decoration:none;
+}
+.homebtn:hover {
+    background-color:#5e5e5e;
+    color: #fff;
+}
+.homebtn:active {
+    position:relative;
+    top:1px;
+}
+
+  /*Buttons styles*/
+ .create-quiz{
+  color: #fff;
+  background-color: #3073b5;
+  border-color: #2b66a1;
+ }
+ .home-select{
+  color: #000;
+  background-color: #fff;
+  border-color: #555;
+ }
+
+ .create-quiz:hover{
+  color: #fff;
+  background-color: #25598d;
+  border-color: #2b66a1;
+ }
+ .home-select:hover{
+  color: #fff;
+  background-color: #c0d9f2;
+  border-color: #8AB8E6;
+ }
+
+ .back{
+   background-color: #f2f2f2;
+   color: #000;
+ }
+
+
   
   //Create part
   .btn-home{
@@ -52,6 +112,12 @@ body {
 	justify-content: space-between;
   }
 
-  
-
-  
+  .container{
+    padding: 1rem 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 80vw;
+    background-color: rgba($color: #000000, $alpha: 0.5)
+  }

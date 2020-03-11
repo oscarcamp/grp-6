@@ -9,20 +9,19 @@ const Quiz = (props) => {
 	}
 
 	return (
-		<li className="quiz d-flex justify-content-between">
+				<li className="quiz mb-2">
 			<Link
-				className="quizitem"
-				to={ '/quiz/' + id }>
+					className="quizitem"
+					to={ '/quiz/' + id }>
 				{title}
 			</Link>
-			<span className="ml-2">
-			<Link to={ '/AddQuestion/' + id }>
-				<button className="btn btn-primary btn-sm m-1"> ✎ </button>
-			</Link>
-			<button onClick={ handleOnDeleteClick } className="btn btn-danger btn-sm m-1"> - </button>
-
+			<span>
+				<Link className="btn btn-primary btn-sm w-100 m-1" to={ '/AddQuestion/' + id }>
+				Edit
+				</Link>
+				<button onClick={ handleOnDeleteClick } className="btn btn-danger btn-sm w-100 m-1"> Delete </button>
 			</span>
-		</li>
+			</li>
 
 	)
 }
