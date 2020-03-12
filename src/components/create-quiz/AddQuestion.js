@@ -5,7 +5,7 @@ import AddAnswer from './AddAnswer'
 
 class AddQuestion extends React.Component {
 	state = {
-		answers: [],
+		answers: ['',],
 		correctAnswer: '',
 		question: '',
 		id: '',
@@ -122,7 +122,7 @@ class AddQuestion extends React.Component {
 		})
 
 		return (
-			<div className="container ">
+			<div className="addquestion container ">
 				<h1>Create quiz</h1>
 				<div className="quiz-form">
 					<form onSubmit={this.handleSubmit}>
