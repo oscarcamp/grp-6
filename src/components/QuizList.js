@@ -56,15 +56,12 @@ class QuizList extends React.Component {
 		})
 
 		return (
-			<div className="quizzes">
-				<div className="container">
-
-					<h1 className="quiz-h1">Choose a quiz you want to play:</h1>
-					<ul className="quiz-list">
-						{quiz}
-					</ul>
-					<Link to="/" className=" homebtn"> Home</Link>
-				</div>
+			<div className="quizzes container">
+				<h1 className="quiz-h1">Choose a quiz you want to play:</h1>
+				<ul className="quiz-list">
+					{quiz}
+				</ul>
+				<Link to="/" className=" homebtn"> Home</Link>
 			</div>
 		)
 	}

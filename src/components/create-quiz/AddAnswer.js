@@ -50,6 +50,7 @@ class AddAnswer extends React.Component {
 								required
 							/>
 							<div className="input-group-append">
+							<button className="btn btn-primary" onClick={this.handleAddAnswer}>+</button>
 								<button className="btn btn-danger" onClick={(e) => {this.deleteAnswer(e, i)}}>
 									-
 								</button>
@@ -57,9 +58,15 @@ class AddAnswer extends React.Component {
 						</div>
 					))
 				}
-				<div className="add-answer">
-					<button className="btn btn-primary" onClick={this.handleAddAnswer}>Add answer</button>
-				</div>
+				{
+					this.props.answers.length < 1
+					?
+					<div className="add-answer">
+						<button className="btn btn-primary" onClick={this.handleAddAnswer}>Add answer</button>
+					</div>
+					:
+					''
+				}
 			
 			</div>
 		)

@@ -92,7 +92,7 @@ class SingleQuiz extends React.Component {
 			)
 		})
 		return (
-			<div className="container text-left mt-3">
+			<div className="question-wrapper container text-left mt-3">
 				<h1>{this.state.title}</h1>
 				<div className="question">
 					<form onSubmit={this.handleSubmit}>

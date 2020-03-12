@@ -50,3 +50,14 @@
 		margin: 0 auto ;
 	}
  }
+
+ @media (min-width: 992px) {
+	.form-wrapper,
+	.quizzes,
+	.question-wrapper,
+	.addquestion {
+		max-width: 800px;
+		margin: 1rem auto ;
+	}
+
+ }

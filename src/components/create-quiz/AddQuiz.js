@@ -34,9 +34,9 @@ class AddQuiz extends React.Component{
 	
 	render(){
 		return(
-		<div>
+		<div className="form-wrapper container">
 			<form onSubmit={this.handleSubmit}> 
-				<div className="form-group container">
+				<div className="form-group">
 					<h1>Create a Quiz</h1>
 					{/* Title */}
 					<div className="input-group mt-4">
